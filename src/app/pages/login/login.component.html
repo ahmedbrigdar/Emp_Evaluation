@@ -1,0 +1,24 @@
+<div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+		
+		<form [formGroup]="login_form" class="form" (ngSubmit)="login()">
+			<input type="text" formControlName="email" placeholder="Email" [(ngModel)]="user.email" required>
+			<input type="password" placeholder="Password" formControlName="password" [(ngModel)]="user.password" required>
+			<button type="submit" id="login-button">Login</button>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>

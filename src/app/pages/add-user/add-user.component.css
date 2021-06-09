@@ -1,0 +1,8 @@
+
+.ng-touched.ng-dirty.ng-valid:not(form) {
+    border-right: 5px solid #42A948; /* green */
+  }
+  
+  .ng-touched.ng-invalid:not(form)  {
+    border: 0.5px solid red; /* red */
+  }

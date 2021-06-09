@@ -1,0 +1,156 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content" *ngIf="evaluation != null && evaluate != null">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">{{ evaluation.firstName }} Evaluation</h4>
+          <button class="close"  aria-hidden="true" style="float: right ;" (click)="close()">
+            <i class="now-ui-icons ui-1_simple-remove"></i>
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-stripped">
+              <tr>
+                <td class="text-primary">JobKnowledge</td>
+                <td>
+                  <input
+                    type="range"
+                    name="range2"
+                    step="1"
+                    min="0"
+                    max="5"
+                    (change)="calculateOverAll()"
+                    [(ngModel)]="evaluate.jobKnowledge"
+                    onchange="rangePrimary2.value=value"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="rangePrimary2"
+                    [(ngModel)]="evaluate.jobKnowledge"
+                    disabled
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="text-primary">WorkQuality</td>
+                <td>
+                  <input
+                    type="range"
+                    name="range3"
+                    step="1"
+                    min="0"
+                    max="5"
+                    (change)="calculateOverAll()"
+                    [(ngModel)]="evaluate.workQuality"
+                    onchange="rangePrimary3.value=value"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="rangePrimary3"
+                    [(ngModel)]="evaluate.workQuality"
+                    disabled
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="text-primary">Attendance</td>
+                <td>
+                  <input
+                    type="range"
+                    name="range4"
+                    step="1"
+                    min="0"
+                    max="5"
+                    (change)="calculateOverAll()"
+                    [(ngModel)]="evaluate.attendance"
+                    onchange="rangePrimary4.value=value"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="rangePrimary4"
+                    [(ngModel)]="evaluate.attendance"
+                    disabled
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="text-primary">Initiatives</td>
+                <td>
+                  <input
+                    type="range"
+                    name="range5"
+                    step="1"
+                    min="0"
+                    max="5"
+                    (change)="calculateOverAll()"
+                    [(ngModel)]="evaluate.initiatives"
+                    onchange="rangePrimary5.value=value"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="rangePrimary5"
+                    [(ngModel)]="evaluate.initiatives"
+                    disabled
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="text-primary">CommunicationSkill</td>
+                <td>
+                  <input
+                    type="range"
+                    name="range6"
+                    step="1"
+                    min="0"
+                    max="5"
+                    (change)="calculateOverAll()"
+                    [(ngModel)]=" evaluate.communicationSkill "
+                    onchange="rangePrimary6.value=value"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="rangePrimary6"
+                    [(ngModel)]="evaluate.communicationSkill"
+                    disabled
+                  />
+                </td>
+              </tr>
+              <footer>
+                  <tr>
+                      <th>OverAllScore</th>
+                      <td>{{evaluate.overAllScore}}%</td>
+                      <td></td>
+                  </tr>
+              </footer>
+            </table>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <button
+                    type="submit"
+                    class="btn btn-success btn-round"
+                    (click)="evaluateEmp()"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

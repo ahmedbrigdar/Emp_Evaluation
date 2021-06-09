@@ -1,0 +1,148 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="title">{{ pageNameString }}
+              
+          </h6>
+          <button class="close"  aria-hidden="true" style="float: right ;" (click)="close()">
+            <i class="now-ui-icons ui-1_simple-remove"></i>
+          </button>
+        </div>
+        <div class="card-header" >
+            
+          </div>
+        <div class="card-body">
+          <form [formGroup]="user_form" class="form" (ngSubmit)="save()" #userForm>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="first name"
+                    formControlName="FirstName"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="last Name"
+                    formControlName="LastName"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Department</label>
+                  <select class="form-control" formControlName="DepartmentID">
+                    <option value="1">IT</option>
+                    <option value="2">Finance</option>
+                    <option value="3">HR</option>
+                    <option value="4">Retails</option>
+                    <option value="5">Purchases</option>
+                    <option value="6">Logistic</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>NationalID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="NationalID"
+                    formControlName="NationalID"
+                    ng-maxlength="10"
+                    ng-minlength="10"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Phone</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="5xxxxxxxx"
+                    formControlName="PhoneNumber"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input
+                    name="email"
+                    id="email"
+                    type="email"
+                    class="form-control"
+                    placeholder="email@company.com"
+                    formControlName="Email"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Password</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Pa$$w0rd"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 pl-1">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      formControlName="IsAdmin"
+                    />
+                    Admin ?
+                    <span class="form-check-sign">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-success btn-round">
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-default btn-round"
+                    (click)="clear()"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

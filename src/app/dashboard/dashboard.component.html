@@ -1,0 +1,102 @@
+<div class="panel-header panel-header-xsm"></div>
+
+<div class="main-content" *ngIf="evaluation != null && evaluate != null">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-warning card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">engineering</i>
+          </div>
+          <p class="card-category">JobKnowledge</p>
+          <h3 class="card-title">{{ evaluate.jobKnowledge }} / 5</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-success card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons"> work_outline</i>
+          </div>
+          <p class="card-category">WorkQuality</p>
+          <h3 class="card-title">{{ evaluate.workQuality }}  / 5</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-rose card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">calendar_today</i>
+          </div>
+          <p class="card-category">Attendance</p>
+          <h3 class="card-title">{{ evaluate.attendance }}  / 5</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-primary card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons"> face </i>
+          </div>
+          <p class="card-category">Initiatives</p>
+          <h3 class="card-title">{{ evaluate.initiatives }}  / 5</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-info card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">supervisor_account</i>
+          </div>
+          <p class="card-category">Communication Skill</p>
+          <h3 class="card-title">{{ evaluate.communicationSkill }}  / 5</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-4 col-sm-4">
+      <div class="card card-stats">
+        <div class="card-header card-header-danger card-header-icon">
+          <div class="card-icon">
+            <i class="material-icons">emoji_events</i>
+          </div>
+          <p class="card-category">OverAllScore</p>
+          <h3 class="card-title">{{ evaluate.overAllScore }} %</h3>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="material-icons">update</i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

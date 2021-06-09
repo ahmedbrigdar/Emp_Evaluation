@@ -1,0 +1,206 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header" style="float: right; padding-right: 3%">
+          <button class="btn btn-secondary btn-round" (click)="downloadAsPDF()">
+            print
+            <i class="now-ui-icons files_paper"></i>
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Evaluation</th>
+                <th class="text-right">Actions</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of emps">
+                  <td>
+                    {{ emp.firstName }}
+                  </td>
+                  <td>
+                    {{ emp.email }}
+                  </td>
+                  <td>
+                    {{ emp.department.departmentName }}
+                  </td>
+                  <td
+                    *ngIf="
+                      emp.employeeEvaluations[0] != null &&
+                      emp.employeeEvaluations[0].overAllScore >= 50
+                    "
+                    class="text-success"
+                  >
+                    {{ emp.employeeEvaluations[0].overAllScore }} %
+                  </td>
+                  <td
+                    *ngIf="
+                      emp.employeeEvaluations[0] != null &&
+                      emp.employeeEvaluations[0].overAllScore < 50
+                    "
+                    class="text-danger"
+                  >
+                    {{ emp.employeeEvaluations[0].overAllScore }} %
+                  </td>
+                  <td
+                    *ngIf="emp.employeeEvaluations[0] == null"
+                    class="text-warning"
+                  >
+                    No Evaluation
+                  </td>
+                  <td class="td-actions text-right">
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title="evaluate"
+                      class="
+                        btn
+                        btn-success
+                        btn-round
+                        btn-icon
+                        btn-icon-mini
+                        btn-neutral
+                      "
+                      data-original-title="Edit Employee"
+                      (click)="evaluate(emp.id)"
+                    >
+                      <i class="now-ui-icons business_badge"></i>
+                    </button>
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title="edit"
+                      class="
+                        btn
+                        btn-info
+                        btn-round
+                        btn-icon
+                        btn-icon-mini
+                        btn-neutral
+                      "
+                      data-original-title="Edit Employee"
+                      (click)="edit(emp.id)"
+                    >
+                      <i class="now-ui-icons ui-2_settings-90"></i>
+                    </button>
+                    <button
+                      type="button"
+                      rel="tooltip"
+                      title="remove"
+                      class="
+                        btn
+                        btn-danger
+                        btn-round
+                        btn-icon
+                        btn-icon-mini
+                        btn-neutral
+                      "
+                      data-original-title="Remove"
+                      (click)="delete(emp.id, emp.firstName)"
+                    >
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-content" hidden #pdfTable>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Employees Evaluation Report</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                <th>Name</th>
+                <th>JobKnowledge</th>
+                <th>WorkQuality</th>
+                <th>Attendance</th>
+                <th>Initiatives</th>
+                <th>CommunicationSkill</th>
+                <th>Evaluation</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of emps">
+                  <td>
+                    {{ emp.firstName }}
+                  </td>
+                  <td *ngIf="emp.employeeEvaluations[0] != null">
+                    {{ emp.employeeEvaluations[0].jobKnowledge }}
+                  </td>
+                  <td class="text-warning" *ngIf="emp.employeeEvaluations[0] == null">
+                    No Evaluation
+                  </td>
+                  <td *ngIf="emp.employeeEvaluations[0] != null">
+                    {{ emp.employeeEvaluations[0].workQuality }}
+                  </td>
+                  <td class="text-warning" *ngIf="emp.employeeEvaluations[0] == null">
+                    No Evaluation
+                  </td>
+                  <td *ngIf="emp.employeeEvaluations[0] != null">
+                    {{ emp.employeeEvaluations[0].attendance }}
+                  </td>
+                  <td class="text-warning" *ngIf="emp.employeeEvaluations[0] == null">
+                    No Evaluation
+                  </td>
+                  <td *ngIf="emp.employeeEvaluations[0] != null">
+                    {{ emp.employeeEvaluations[0].initiatives }}
+                  </td>
+                  <td class="text-warning" *ngIf="emp.employeeEvaluations[0] == null">
+                    No Evaluation
+                  </td>
+                  <td *ngIf="emp.employeeEvaluations[0] != null">
+                    {{ emp.employeeEvaluations[0].communicationSkill }}
+                  </td>
+                  <td class="text-warning" *ngIf="emp.employeeEvaluations[0] == null">
+                    No Evaluation
+                  </td>
+                  <td
+                    *ngIf="
+                      emp.employeeEvaluations[0] != null &&
+                      emp.employeeEvaluations[0].overAllScore >= 50
+                    "
+                    class="text-success"
+                  >
+                    {{ emp.employeeEvaluations[0].overAllScore }} %
+                  </td>
+                  <td
+                    *ngIf="
+                      emp.employeeEvaluations[0] != null &&
+                      emp.employeeEvaluations[0].overAllScore < 50
+                    "
+                    class="text-danger"
+                  >
+                    {{ emp.employeeEvaluations[0].overAllScore }} %
+                  </td>
+                  <td
+                    *ngIf="emp.employeeEvaluations[0] == null"
+                    class="text-warning"
+                  >
+                    No Evaluation
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,9 @@ to login use admin@company.com as email and (Pa$$w0rd) as password
 5. Then: ```npm install```
 6. And: ```npm start```
 7. Navigate to [localhost:4200](localhost:4200)
+8. api repo : https://github.com/ahmedbrigdar/Emp_EvaluationApi
+
+contact me:brigdar.88@gmail.com
 
 
 

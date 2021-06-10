@@ -1,4 +1,4 @@
-**Code Chalenge**
+**Code Challenge**
 this is the client angular 11 application.
 to login use admin@company.com as email and (Pa$$w0rd) as password
 
